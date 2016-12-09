@@ -1,0 +1,29 @@
+﻿@model AESEncryption.Models.AESModel
+@{
+    ViewBag.Title = "AES Encryption";
+}
+
+<h2>AES Encryption</h2>
+@using (Html.BeginForm("EncryptFile", "Home", FormMethod.Post))
+{
+    <h4>Enter input file path</h4>
+    @Html.TextAreaFor(m => m.inputPath)
+    <h4>Enter output file path</h4>
+    @Html.TextAreaFor(m => m.outputPath)
+    <h4>Enter key</h4>
+    @Html.TextAreaFor(m=>m.password)
+    <input type="submit" value="Encrypt">
+}
+
+
+<h2>AES Decryption</h2>
+@using (Html.BeginForm("DecryptFile", "Home", FormMethod.Post))
+{
+    <h4>Enter input file path</h4>
+    @Html.TextAreaFor(m => m.inputPath)
+    <h4>Enter output file path</h4>
+    @Html.TextAreaFor(m => m.outputPath)
+    <h4>Enter key</h4>
+    @Html.TextAreaFor(m => m.password)
+    <input type="submit" value="Decrypt">
+}
